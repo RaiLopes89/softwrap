@@ -2,6 +2,9 @@ package model;
 
 import java.util.Date;
 
+import org.joda.time.DateTime;
+import org.joda.time.Months;
+
 import Enum.Cargo;
 import Enum.Status;
 
@@ -58,5 +61,14 @@ public class FuncionarioModel {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
+	public double bonus() {
+		Date data = new Date();
+		int mes = Months.monthsBetween(new DateTime(getEntrada().getTime()), new DateTime(data.getTime())).getMonths();
+		
+		
+		int divisao = mes/6;
+		double resultado = (divisao*0.10*getSalarioBase())+(getSalarioBase()*getCargo().getPorcentagem());
+		
+		return resultado;
+	}	
 }
