@@ -1,15 +1,19 @@
-package br.com.softwrap.model;
+package model;
 
 import java.util.Date;
+
+import Enum.Cargo;
+import Enum.Status;
+
 
 public class FuncionarioModel {
 	private long id;
 	private String nome;
-	private Enum cargo;
+	private Cargo cargo;
 	private SetorModel setor;
 	private double salarioBase;
 	private Date entrada;
-	private Enum status;
+	private Status status;
 	
 	
 	public long getId() {
@@ -24,10 +28,10 @@ public class FuncionarioModel {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Enum getCargo() {
+	public Cargo getCargo() {
 		return cargo;
 	}
-	public void setCargo(Enum cargo) {
+	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
 	public SetorModel getSetor() {
@@ -48,10 +52,10 @@ public class FuncionarioModel {
 	public void setEntrada(Date entrada) {
 		this.entrada = entrada;
 	}
-	public Enum getStatus() {
+	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(Enum status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	
